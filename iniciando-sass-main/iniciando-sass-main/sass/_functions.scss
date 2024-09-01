@@ -1,0 +1,4 @@
+@function toRem($tamanhoPx){
+    $root: 16px;
+    @return $tamanhoPx / $root * 1rem;
+}

@@ -1,0 +1,43 @@
+@mixin flex(){
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+@mixin flexGap($tamanhoGap){
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: #{$tamanhoGap}px;
+}
+
+@mixin celular{
+    @media(max-width: 540px){
+        @content;
+    }   
+}
+
+@mixin tablet{
+    @media(min-width: 541px) and (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin breakpoints ( $device ){
+    @if $device == "celula"{
+        @media(max-width: 540px){
+            @content;
+        }
+    }
+    @else if $device == "tablet"{
+        @media(min-width: 541px) and (max-width: 768px){
+            @content;
+        }
+    }
+    @else if $devise == "desktop"{
+        @media(min-width: 769px){
+            @content;
+        }
+    }
+}
+
